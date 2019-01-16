@@ -992,6 +992,16 @@ fi
 # End of autostart
 fi
 
+mavlink start -d /dev/ttyS2
+mavlink stream -d /dev/ttyS2 -s HEARTBEAT -r 5
+mavlink stream -d /dev/ttyS2 -s TIMESYNC -r 1
+# mavlink stream -d /dev/ttyS2 -s MANUAL_CONTROL -r 1
+# mavlink stream -d /dev/ttyS2 -s ATTITUDE_CONTROLS -r 1
+# mavlink stream -d /dev/ttyS2 -s ATTITUDE -r 50
+# mavlink stream -d /dev/ttyS2 -s ATTITUDE_QUATERNION -r 50
+# mavlink stream -d /dev/ttyS2 -s HIGHRES_IMU -r 50
+# mavlink stream -d /dev/ttyS2 -s ATTITUDE_TARGET -r 10
+
 # There is no further script processing, so we can free some RAM
 # XXX potentially unset all script variables.
 unset TUNE_ERR
